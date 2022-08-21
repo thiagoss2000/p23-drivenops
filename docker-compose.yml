@@ -4,14 +4,14 @@ services:
     container_name: db_drivenops
     restart: always
     ports:
-      - 1235:5432
+      - 1234:5432
     env_file:
       - ./back-end/.env
     volumes:
       - db_drivenops:/var/lib/postgresql/data
 
   drivenops:
-    container_name: image_drivenops
+    container_name: back_drivenops
     build: ./back-end
     ports: 
       - 5000:5000
