@@ -15,4 +15,4 @@ jobs:
           envkey_DATABASE_URL: ${{ secrets.DATABASE_URL }}
           file_name: .env.test
         -name: Run tests
-          run: docker-compose -f docker-compose-tests.yml run cd ./back-end drivenops npm run test
+          run: docker-compose -f docker-compose-tests.yml run drivenops npm run test

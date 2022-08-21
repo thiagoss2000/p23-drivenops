@@ -6,14 +6,14 @@ services:
     ports:
       - 1234:5432
     env_file:
-      - ./back-end/.env.test
+      - .env.test
 
   drivenops:
     container_name: back_drivenops
-    build: ./back-end
+    build: .
     ports: 
       - 5000:5000
     depends_on:
       - db_drivenops
     env_file:
-      - ./back-end/.env.test
+      - .env.test
