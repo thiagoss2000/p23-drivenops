@@ -13,10 +13,11 @@ jobs:
         envkey_POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD_TEST }}
         envkey_POSTGRES_DB: ${{ secrets.POSTGRES_DB_TEST }}
         envkey_DATABASE_URL: ${{ secrets.DATABASE_URL_TEST }}
+        directory: ./back-end
         file_name: .env.test
         fail_on_empty: true
     - name: Run tests
-      run: ls -a ./
+      run: ls -a ./back-end
     - name: Run tests all
-      run: ls ./
+      run: ls ./back-end
       # docker-compose -f docker-compose.test.yml run drivenops npm run test
