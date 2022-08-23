@@ -6,7 +6,7 @@ jobs:
     steps:
     - name: Check out repository code
       uses: actions/checkout@v3
-    - name: Make a new envfile
+    - name: Make envfile
       uses: SpicyPizza/create-envfile@v1
       with:
         envkey_POSTGRES_USER: ${{ secrets.POSTGRES_USER_TEST }}
@@ -14,5 +14,5 @@ jobs:
         envkey_POSTGRES_DB: ${{ secrets.POSTGRES_DB_TEST }}
         envkey_DATABASE_URL: ${{ secrets.DATABASE_URL_TEST }}
         file-name: .env.test
-      - name: Run tests
-          run: docker-compose -f docker-compose.test.yml run drivenops npm run test
+    - name: Run tests
+        run: docker-compose -f docker-compose.test.yml run drivenops npm run test
