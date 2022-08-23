@@ -5,7 +5,7 @@ services:
     ports:
       - 1235:5432
     env_file:
-      - ./back-end/.env.test
+      - .env.test
 
   drivenops:
     container_name: image_drivenops
@@ -15,4 +15,4 @@ services:
     depends_on:
       - db_drivenops
     env_file:
-      - ./back-end/.env.test
+      - .env.test
