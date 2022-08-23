@@ -16,8 +16,9 @@ jobs:
         directory: ./back-end
         file_name: .env.test
         fail_on_empty: true
-    - name: Run tests
+    - name: Run tests local all
       run: ls -a ./back-end
-    - name: Run tests all
+    - name: Run tests local
       run: ls ./back-end
-      # docker-compose -f docker-compose.test.yml run drivenops npm run test
+    - name: Run tests
+      run: docker-compose -f docker-compose.test.yml run drivenops npm run test
