@@ -16,3 +16,5 @@ jobs:
         file-name: .env.test
     - name: Run tests
       run: docker-compose -f docker-compose.test.yml run drivenops npm run test
+    - name: local
+      run: pwd
