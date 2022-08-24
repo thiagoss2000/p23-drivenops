@@ -2,10 +2,11 @@ services:
   db_drivenops:
     image: postgres
     container_name: db_drivenops
+    restart: always
     ports:
       - 1235:5432
     env_file:
-      - .env.test
+      - ./back-end/.env.test
 
   drivenops:
     container_name: image_drivenops
@@ -15,4 +16,4 @@ services:
     depends_on:
       - db_drivenops
     env_file:
-      - .env.test
+      - ./back-end/.env.test

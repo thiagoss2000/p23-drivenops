@@ -4,8 +4,8 @@ WORKDIR /usr/src/
 
 COPY . .
 
-EXPOSE 3000
-
 RUN npm i && npm run build 
+
+EXPOSE 3000
 
 CMD [ "npm", "start" ]
