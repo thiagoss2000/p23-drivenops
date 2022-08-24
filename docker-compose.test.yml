@@ -9,7 +9,7 @@ services:
       - ./back-end/.env.test
 
   drivenops:
-    container_name: image_drivenops
+    container_name: drivenops
     build: ./back-end
     ports: 
       - 5000:5000
