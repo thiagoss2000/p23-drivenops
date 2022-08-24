@@ -1,11 +1,14 @@
 FROM node:16
 
-WORKDIR /usr/src/
+WORKDIR /app
 
 COPY . .
+RUN npm i
+RUN npm run build
 
-RUN npm i && npm run build 
+RUN mkdir -p /var/www/html
+RUN mv build/* /var/www/html
 
-EXPOSE 3000
+WORKDIR /
 
-CMD [ "npm", "start" ]
+RUN rm -rf /app
