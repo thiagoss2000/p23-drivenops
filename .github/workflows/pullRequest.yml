@@ -7,12 +7,18 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v3
     - name: Make envfile
-      uses: SpicyPizza/create-envfile@v1
+      uses: SpicyPizza/create-envfile@v1.3
       with:
         envkey_POSTGRES_USER: ${{ secrets.POSTGRES_USER_TEST }}
         envkey_POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD_TEST }}
         envkey_POSTGRES_DB: ${{ secrets.POSTGRES_DB_TEST }}
         envkey_DATABASE_URL: ${{ secrets.DATABASE_URL_TEST }}
-        file-name: .env.test
+        directory: back-end
+        file_name: .env.test
+        fail_on_empty: true
+    - name: Run tests local all
+      run: ls -a ./back-end
+    - name: Run tests local
+      run: ls ./back-end
     - name: Run tests
       run: docker-compose -f docker-compose.test.yml run drivenops npm run test
